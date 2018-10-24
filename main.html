@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <title>United States Stats</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bodyclass">
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+  <div id="option">
+
+  <h1 class="title_head" > Visualizing United States Census & Per Capita Data </h1>
+    <div>
+    <div style='padding-left:10%'>
+      <input name="DotButton"
+             id = "Dot"
+             type="button"
+             value="Raw"
+             onclick="DotUpdate()" />
+      <input name="DotButton1"
+             id = "Dot1"
+             type="button"
+             value="PerCapita"
+             onclick="DotUpdate1()" />
+    </div>
+  </div>
+  <div class="container outer">
+    <div id="map" style="flex:0 0 50%">
+    </div>
+    <div id="chart" style="flex:0 0 50%">
+    </div>
+    <div class="writing" style="flex:0 0 100%">
+      <h4><u>Plot-1 (States are clickable)</u></h4>
+      Mark : Map (2-D) Area, Channel : Color<br>
+      <p>Here we can see per capita income in each state and total income of each state in two separate plots. Clicking on button(Per capita) gives plot of united states map with all states with color hue changing from light red to dark red based on income of state. Clicking on button(Raw) gives plot of united states map with total income all states with color hue changing from light blue to dark blue based on income of state. <br><br>
+        I took the stats of year 2017. For total income I muliplied population (year 2017) of that state with per capita income. <br><br>
+        Using different Buttons on above graph1, changes the plot. If we select per capita button, it gives map of all states with per capita income. If we select raw button, it gives map of all states with total income of each state.<br>
+        <h4><u>Plot-2 (Plot-2 changes on selecting a state in plot-1)</u></h4>
+        Mark and Channel : line and Position<br>
+      </p>Here we can see the population growth each state in last 7 years. This plot is for each state. It can be updated by selecting map for each state.<br><br> For example, if we select Texas State after clicking raw button, The plot updates to Texas State and displays number of population in thousands starting from year 2011 and going to year 2017.
+
+      <h4><u>Linkage Between Plot 1 and 2 :</u></h4>
+      <p>Selecting a state on first plot with any map (Raw or capita) , gives population statistics of each state (wrt clicking state) from year 2011 to year 2017.<br/>
+      Example :  Click on per capita and then state New York. Plot2 Automatically changes for New York State.</p>
+    </div>
+  </div>
+  <script src="map.js"></script>
+  <script src="chart.js"></script>
+
+</body>
+
+</html>
